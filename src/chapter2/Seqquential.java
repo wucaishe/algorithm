@@ -44,11 +44,11 @@ public class Seqquential {
 	int SLInert(SLType SL, int n, DATA data) {
 		int i;
 		if (SL.Listlen >= MAXLEN) {
-			System.out.println("顺序表已满，不能插入结点！\n");
+			System.out.println("顺序表已满，不能插入结点！");
 			return 0;
 		}
 		if (n < 1 || n > SL.Listlen - 1) {
-			System.out.println("插入元素序号错误，不能插入元素！\n");
+			System.out.println("插入元素序号错误，不能插入元素！");
 			return 0;
 		}
 		for (i = SL.Listlen; i >= n; i--) {
@@ -68,7 +68,7 @@ public class Seqquential {
 	 */
 	int SLAdd(SLType SL, DATA data) {
 		if (SL.Listlen >= MAXLEN) {
-			System.out.println("顺序表已满，不能再添加结点了！\n");
+			System.out.println("顺序表已满，不能再添加结点了！");
 			return 0;
 		}
 		SL.ListData[++SL.Listlen] = data;
@@ -85,7 +85,7 @@ public class Seqquential {
 	int SLDelete(SLType SL, int n) {
 		int i;
 		if (n < 1 || n > SL.Listlen + 1) {
-			System.out.println("删除结点序号错误，不能删除结点！\n");
+			System.out.println("删除结点序列号错误，不能删除结点！");
 			return 0;
 		}
 		for (i = n; i < SL.Listlen; i++) {
@@ -93,5 +93,51 @@ public class Seqquential {
 		}
 		SL.Listlen--;
 		return 1;
+	}
+
+	/**
+	 * 按序列号查找结点
+	 * 
+	 * @param SL
+	 * @param n
+	 * @return
+	 */
+	DATA SLFindByNum(SLType SL, int n) {
+		if (n < 0 || n > SL.Listlen) {
+			System.out.println("结点语错误，不能返回结点！");
+			return null;
+		}
+		return SL.ListData[n];
+	}
+
+	/**
+	 * 按关键字查找结点
+	 * 
+	 * @param SL
+	 * @param key
+	 * @return
+	 */
+	int SLFindByCout(SLType SL, String key) {
+		int i;
+		for (i = 1; i <= SL.Listlen; i++) {
+			if (SL.ListData[i].key.compareTo(key) == 0) {
+				return i;
+			}
+		}
+		return 0;
+	}
+
+	/**
+	 * 显示所有结点
+	 * @param SL
+	 * @return
+	 */
+	int SLAll(SLType SL) {
+		int i;
+		for (i = 1; i <= SL.Listlen; i++) {
+			System.out.printf("(%s,%s,%d\n)", SL.ListData[i].key,
+					SL.ListData[i].name, SL.ListData[i].age);
+		}
+		return 0;
 	}
 }
