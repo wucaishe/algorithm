@@ -144,7 +144,7 @@ class SLType {
 	}
 }
 
-public class Seqquential {
+public class P2_1 {
 	public static void main(String[] args) {
 		int i;
 		SLType SL = new SLType();
