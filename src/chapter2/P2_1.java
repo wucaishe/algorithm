@@ -2,8 +2,6 @@ package chapter2;
 
 import java.util.Scanner;
 
-import sun.security.krb5.internal.PAData;
-
 class DATA {
 	String key;
 	String name;
