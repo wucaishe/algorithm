@@ -1,4 +1,7 @@
 package chapter2;
+/**
+ *@author Linuxgt 
+ */
 
 import java.util.Scanner;
 
